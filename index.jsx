@@ -37,9 +37,11 @@ function App() {
             </button>
       <br />
       <br />
-      <div className="products-list">
-        {showProducts && <ProductsList />}
-      </div>
+      <React.Suspense fallback={<h2>Loading...</h2>}>      
+        <div className="products-list">
+          {showProducts && <ProductsList />}
+        </div>
+      </React.Suspense>
     </>
   )
 }
